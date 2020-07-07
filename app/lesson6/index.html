@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*    const test = async () => {
+
+        }
+
+        class Man {
+            constructor(name) {
+                this.name = name;
+            }
+            async showName(){
+                return await new Promise((res,rej) => setTimeout(res, 2000, this.name))
+            }
+        }*/
+
+    // async function test() {
+    //     try {
+    //         return Promise.reject("error");
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
+    //
+    // test().catch(e => console.log(e));
+
+    /*    const arrowf1 = async (a, b) => {
+            return a + b;
+        }
+
+        arrowf1(5, 5)
+            .then(console.log)*/
+
+    // class F1 {
+    //     async f1(a, b) {
+    //         return a + b;
+    //     }
+    // }
+    //
+    // new F1().f1(5,5).then(console.log);
+
+    // Task 02
+    // RU: Создайте асинхронную функцию f2, используя FDE (Function Definition Expression).
+    //     Функция должна возвращать 'Promise Data', используя Promise.resolve()
+    //     Выведите значение, которое вернет функция в консоль.
+    //     Обработаете промис и выведите значение в консоль.
+
+    // const f2 = async () => {
+    //     return "Promise Data";
+    // }
+    //
+    // f2().then(console.log);
+
+    // Task 03
+    // RU: Создайте класс C1. Добавьте асинхронный метод f3.
+    //     Метод должен генерить исключение 'Error occurs in f3 method'.
+    //     Создайте экземпляр класса и вызовите метод f3.
+    //     Обработаете промис.
+
+    // class C1 {
+    //     async c1() {
+    //         if((Math.ceil(Math.random()*100)+1) < 21){
+    //             return Promise.resolve("resolved");
+    //         } else {
+    //             return Promise.reject("rejected");
+    //         }
+    //     }
+    // }
+    //
+    // new C1().c1().then(console.log, console.log);
+
+    // Task 04
+    // RU: Cоздайте функцию makeRequest, используя FDS (Function Declaration Statement).
+    //     Функция должна принимать один параметр - url и возвращать промис,
+    //     который перейдет в состояние resolved через 2с. и вернет значение параметра.
+    //     Первой строкой в функции выведите сообщение 'makeRequest is called'.
+    //     Cоздайте функцию f4, используя FDS (Function Declaration Statement).
+    //     Функция должна вызвать функцию makeRequest, получить результат ее работы и вывести в консоль.
+
+    // const makeRequest = async (url) => {
+    //     return new Promise((res, rej) => setTimeout(res, 1000, url));
+    // }
+    //
+    // const f4 = async () => {
+    //     const res = await makeRequest("wtf");
+    //     console.log(res);
+    // }
+    //
+    // f4();
+
+    // Task 05
+    // RU: Внесите изменения в функцию f4 из предыдущего задания так, чтобы в консоле появилось
+    //     значение переданого параметра в функцию makeRequest.
+
+
+    // Task 06
+    // RU: Cоздайте асинхронную функцию f6, используя FDS (Function Declaration Statement).
+    //     Функция должна вызвать два раза функцию makeRequest с разными значениями параметра.
+    //     Перед вызовом и после каждого вызова makeRequest функция должна выводить в консоль любое сообщение.
+    //     Создать и вернуть массив, который должен содержать значения переданые функции makeRequest.
+    //     Обработаете результат работы функции f6.
+
+    // const makeRequest = async (url) => {
+    //     return new Promise((res, rej) => setTimeout(res, 1000, url));
+    // }
+    //
+    // const f6 = async () => {
+    //     // console.log("1");
+    //     // // !!!!!!!!!!!!! await возращает значение
+    //     // const res1 = await makeRequest("wtf");
+    //     // console.log("2");
+    //     // console.log("3");
+    //     // const res2 = await makeRequest("sleep");
+    //     // console.log("4");
+    //
+    //     // return {res1,res2};
+    //     console.log("start");
+    //     const result =  await Promise.all([makeRequest("wtf"), makeRequest("sleep")]);
+    //     console.log("end");
+    //     return result;
+    // }
+    //
+    // f6().then(res => console.log(res));
+
+    // Task 07
+    // RU: Измените асинхронную функцию f6 из предыдущего задания так, чтобы вызовы функции
+    //     makeRequest выполнялись паралельно.
+
+    // Task 08
+    // RU: Создайте масив урлов ['http://a', 'http://b'].
+    //     Создайте функцию sendRequest, которая принимает один параметр - url.
+    //     Функция в первой строке должна выводить в консоль сообщение 'sendRequest is called'
+    //     и возвращать через 2 с для первого урла объект { name: 'Ann' }, а для второго
+    //     урла объект { age: 16 }.
+    //     Создайте асинхронную функцию f8 которая должна вызвать функцию sendRequest для каждого урла
+    //     и вернуть объект {name: 'Ann', age: 16}
+    //     Обработайте результат работы функции f8
+
+    // const arr = ["https://vk.com", "https://rutracker.org"];
+    //
+    // const urlsData = {
+    //     "https://vk.com": {name: 'Ann'};
+    //     "https://rutracker.org": {age: 16};
+    // }
+    //
+    // const sendRequest = async (url) => {
+    //     console.log('sendRequest is called');
+    //     // const result = await url === "https://vk.com"? setTimeout(Promise.resolve({ name: 'Ann' }),2000 ): setTimeout(Promise.resolve({ age: 16 }),2000)
+    //     // return result;
+    //     return new Promise((res, rej) => {
+    //         const data = urlsData[url];
+    //         setTimeout(() => {
+    //             return data ? res(data) : rej("error in data")
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // async function f8(arr) {
+    //     try {
+    //         const result = await Promise.all(arr.map(url => sendRequest(url)));
+    //         return result.reduce((acc, elem) => ({...acc, ...elem}), {})
+    //     } catch (e) {
+    //         console.log(e);
+    //         return "error request";
+    //     }
+    // }
+    //
+    // f8(arr)
+    //     .then(console.log)
+
+
+</script>
+</body>
+</html>

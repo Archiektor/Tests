@@ -1,0 +1,7 @@
+/node_modules/
+/webpack.dev.js
+/tsconfig.json
+/package-lock.json
+/jest.config.js
+/dist/
+.idea
